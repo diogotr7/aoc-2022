@@ -1,0 +1,25 @@
+name: Build
+
+on: push
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Setup .NET 6.0
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: '6.0.x'
+
+      - name: Clone
+        uses: actions/checkout@v2
+
+      - name: Build
+        run: dotnet publish -c Release src/AdventOfCode2022.sln
+
+      - name: Upload AdventOfCode2022
+        uses: actions/upload-artifact@v2
+        with:
+          name: AdventOfCode2022
+          path: src/AdventOfCode2022/bin/x64/Release/net6.0/publish

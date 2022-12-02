@@ -6,7 +6,7 @@ namespace AdventOfCode
     {
         public static void Main(string[] args)
         {
-            ISolution solution = new Day01();
+            ISolution solution = new Day02();
 
             var name = solution.GetType().Name;
             var data = File.ReadAllText(name + ".txt");

@@ -8,18 +8,12 @@ jobs:
 
     steps:
       - name: Setup .NET 6.0
-        uses: actions/setup-dotnet@v1
+        uses: actions/setup-dotnet@v3
         with:
           dotnet-version: '6.0.x'
 
       - name: Clone
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Build
-        run: dotnet publish -c Release src/AdventOfCode2022.sln
-
-      - name: Upload AdventOfCode2022
-        uses: actions/upload-artifact@v2
-        with:
-          name: AdventOfCode2022
-          path: src/AdventOfCode2022/bin/x64/Release/net6.0/publish
+        run: dotnet build -c Release src/AdventOfCode2022.sln

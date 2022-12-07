@@ -13,8 +13,4 @@
     </Content>
   </ItemGroup>
 
-  <ItemGroup>
-    <None Remove="Day06.txt" />
-  </ItemGroup>
-
 </Project>

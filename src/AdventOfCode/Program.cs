@@ -9,7 +9,7 @@ namespace AdventOfCode
             ISolution solution = new Day07();
 
             var name = solution.GetType().Name;
-            var data = File.ReadAllText(name + ".txt");
+            var data = File.ReadAllText(Path.Combine(name, name + ".txt"));
             Console.WriteLine(name);
             var p1 = RunTimed(() => solution.Part1(data));
             var p2 = RunTimed(() => solution.Part2(data));
